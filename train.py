@@ -19,6 +19,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # --- Set MLflow experiment ---
 mlflow.set_experiment("california_house_price_experiment")
 
+mlruns_path = os.path.join(os.getcwd(), "mlruns")  # relative to current folder
+mlflow.set_tracking_uri(f"file://{mlruns_path}")
+
 # --- Train and log model ---
 with mlflow.start_run():
     model = LinearRegression()
