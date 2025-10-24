@@ -1,4 +1,6 @@
 import os
+os.environ["MLFLOW_TRACKING_URI"] = "file://./mlruns"
+
 import mlflow
 import mlflow.sklearn
 from sklearn.datasets import fetch_california_housing
