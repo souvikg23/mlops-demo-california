@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/DSU%20Teaching%202025%20odd%20sem/MLOps/DEMO/mlops_demo/mlruns/221932300351769199/f54e5bdbed804000a317a0200aa6efef/artifacts
+end_time: 1761351829859
+entry_point_name: ''
+experiment_id: '221932300351769199'
+lifecycle_stage: active
+run_id: f54e5bdbed804000a317a0200aa6efef
+run_name: blushing-zebra-852
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761351819141
+status: 3
+tags: []
+user_id: souvik

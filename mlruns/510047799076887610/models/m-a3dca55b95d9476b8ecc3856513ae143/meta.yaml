@@ -1,0 +1,10 @@
+artifact_location: file:///D:/DSU%20Teaching%202025%20odd%20sem/MLOps/DEMO/mlops_demo/mlruns/510047799076887610/models/m-a3dca55b95d9476b8ecc3856513ae143/artifacts
+creation_timestamp: 1761350484169
+experiment_id: '510047799076887610'
+last_updated_timestamp: 1761350502918
+model_id: m-a3dca55b95d9476b8ecc3856513ae143
+model_type: null
+name: model
+source_run_id: db4b616986f444a88df9e9852e669b89
+status: 2
+status_message: null

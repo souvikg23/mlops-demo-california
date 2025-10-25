@@ -1,0 +1,22 @@
+artifact_path: file:///D:/DSU%20Teaching%202025%20odd%20sem/MLOps/DEMO/mlops_demo/mlruns/510047799076887610/models/m-7b0eb56253624c64a0d4d1465445451e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.6
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.5.1
+model_id: m-7b0eb56253624c64a0d4d1465445451e
+model_size_bytes: 724
+model_uuid: m-7b0eb56253624c64a0d4d1465445451e
+prompts: null
+run_id: 1aa5c66f45f24926a28f9a5592b023e5
+utc_time_created: '2025-10-24 17:50:27.817282'
