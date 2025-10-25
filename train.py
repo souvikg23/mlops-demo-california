@@ -1,6 +1,4 @@
 import os
-os.environ["MLFLOW_TRACKING_URI"] = "file://./mlruns"
-
 import mlflow
 import mlflow.sklearn
 from sklearn.datasets import fetch_california_housing
@@ -9,7 +7,16 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import pandas as pd
 
-# --- Load California Housing dataset ---
+# --- Make cross-platform path for MLflow tracking ---
+mlruns_path = os.path.abspath("mlruns")
+
+# Convert Windows-style path to URI-safe format
+mlruns_uri = mlruns_path.replace("\\", "/")
+mlflow.set_tracking_uri(f"file:///{mlruns_uri}")
+
+mlflow.set_experiment("california_house_price_experiment")
+
+# --- Load dataset ---
 data = fetch_california_housing(as_frame=True)
 df = data.frame
 
@@ -18,12 +25,6 @@ y = df["MedHouseVal"]
 
 # --- Split dataset ---
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# --- Set MLflow experiment ---
-mlflow.set_experiment("california_house_price_experiment")
-
-mlruns_path = os.path.join(os.getcwd(), "mlruns")  # relative to current folder
-mlflow.set_tracking_uri(f"file://{mlruns_path}")
 
 # --- Train and log model ---
 with mlflow.start_run():
@@ -34,7 +35,7 @@ with mlflow.start_run():
 
     mlflow.log_param("model_type", "LinearRegression")
     mlflow.log_metric("mse", mse)
-    mlflow.sklearn.log_model(model, "model")
+    mlflow.sklearn.log_model(model, name="model", input_example=X_test.iloc[:5])
 
-print(f"✅ Model trained successfully on California housing data. MSE: {mse:.4f}")
+print(f"✅ Model trained successfully. MSE: {mse:.4f}")
 print("Run `mlflow ui` to visualize experiments at http://localhost:5000")
