@@ -42,6 +42,10 @@ with mlflow.start_run():
     mlflow.log_metric("mse", mse)
     mlflow.sklearn.log_model(model, artifact_path="model")
 
+import joblib
+# After training the model
+joblib.dump(model, "linear_model.pkl")
+
 print(f"Model trained successfully. MSE: {mse:.4f}")
 #change2
 print("Run `mlflow ui` locally to visualize experiments at http://localhost:5000")
