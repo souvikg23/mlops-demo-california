@@ -1,0 +1,29 @@
+name: Retrain Model
+
+on:
+  push:
+    paths:
+      - "housing.csv"
+      - "train.py"
+      - "app.py"
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install scikit-learn pandas joblib streamlit
+      - name: Train Model
+        run: python train.py
+      - name: Upload model artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: linear-model
+          path: linear_model.pkl
