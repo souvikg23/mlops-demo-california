@@ -31,7 +31,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # --- Set MLflow experiment ---
 mlflow.set_experiment("california_house_price_experiment_2")
 
-# --- Train and log model ---
+# --- Train and log model ---#
 with mlflow.start_run():
     model = LinearRegression()
     model.fit(X_train, y_train)
