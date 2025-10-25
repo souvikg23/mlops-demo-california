@@ -47,6 +47,7 @@ import os
 
 # Ensure models folder exists
 os.makedirs("models", exist_ok=True)
+#chanfe
 
 # Save the trained model
 joblib.dump(model, "models/linear_model.pkl")
