@@ -13,7 +13,8 @@ st.markdown(
 )
 
 # --- Load model from public GitHub URL ---
-MODEL_URL = "https://raw.githubusercontent.com/<username>/<repo>/main/models/linear_model.pkl"
+MODEL_URL = "https://raw.githubusercontent.com/souvikg23/mlops-demo-california/main/models/linear_model.pkl"
+
 
 try:
     response = requests.get(MODEL_URL)

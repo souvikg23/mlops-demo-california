@@ -43,8 +43,14 @@ with mlflow.start_run():
     mlflow.sklearn.log_model(model, artifact_path="model")
 
 import joblib
-# After training the model
-joblib.dump(model, "linear_model.pkl")
+import os
+
+# Ensure models folder exists
+os.makedirs("models", exist_ok=True)
+
+# Save the trained model
+joblib.dump(model, "models/linear_model.pkl")
+print("Model saved to models/linear_model.pkl")
 
 print(f"Model trained successfully. MSE: {mse:.4f}")
 #change2
