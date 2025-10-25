@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/DSU%20Teaching%202025%20odd%20sem/MLOps/DEMO/mlops_demo/mlruns/510047799076887610/ecc25f26c3b84fcbabc4004e2a9d479f/artifacts
+end_time: 1761351782168
+entry_point_name: ''
+experiment_id: '510047799076887610'
+lifecycle_stage: active
+run_id: ecc25f26c3b84fcbabc4004e2a9d479f
+run_name: salty-zebra-231
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761351771391
+status: 3
+tags: []
+user_id: souvik
