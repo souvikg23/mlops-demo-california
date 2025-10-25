@@ -43,5 +43,5 @@ with mlflow.start_run():
     mlflow.sklearn.log_model(model, artifact_path="model")
 
 print(f"Model trained successfully. MSE: {mse:.4f}")
-#change
+#change2
 print("Run `mlflow ui` locally to visualize experiments at http://localhost:5000")
